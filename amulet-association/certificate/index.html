@@ -1,4 +1,4 @@
-lse YPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
@@ -6,52 +6,51 @@ lse YPE html>
 <title>ค้นหาใบรับรองสมาคมพระเครื่อง</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: Tahoma, sans-serif;
+body{
+    font-family:Tahoma,sans-serif;
 
-  /* 🖼️ พื้นหลัง */
-  background-image: url("certificate1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-color: #000;
+    background-image:url("certificate1.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-color:#000;
 
-  height: 200vh;
+    height:200vh;
 }
 
-/* 🔍 ช่องค้นหา */
-.search-container {
-  position: absolute;
-  top: 22vh; /* 👈 ใต้ลูกศรแบบอิงหน้าจอ */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 420px;
-  height: 38px;
-  display: flex;
+/* ช่องค้นหา */
+.search-container{
+    position:absolute;
+    top:22vh;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:420px;
+    height:38px;
+    display:flex;
 }
 
-.search-container input {
-  flex: 1;
-  padding: 0 8px;
-  font-size: 13px;
-  border: 2px solid #d4af37;
-  border-right: none;
-  outline: none;
+.search-container input{
+    flex:1;
+    padding:0 8px;
+    font-size:13px;
+    border:2px solid #d4af37;
+    border-right:none;
+    outline:none;
 }
 
-.search-container button {
-  width: 38px;
-  background: #d4af37;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
+.search-container button{
+    width:38px;
+    background:#d4af37;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
 }
 </style>
 
@@ -60,54 +59,67 @@ body {
 <body>
 
 <div class="search-container">
-  <input id="searchInput" type="text" placeholder="ค้นหาจากเลขบัตร. ××××-××××">
-  <button onclick="searchCert()">🔍</button>
+    <input
+        id="searchInput"
+        type="text"
+        placeholder="ค้นหาจากเลขบัตร เช่น 0975-33671">
+
+    <button onclick="searchCert()">🔍</button>
 </div>
 
 <script>
-function searchCert() {
-  // รับค่าจากช่อง Input และตัดช่องว่างหน้า-หลังออก
-  let value = document.getElementById("searchInput").value.trim();
-  
-  if (value === "") {
-    alert("กรุณากรอกเลขบัตร");
-    return;
-  }
 
-  // รายการตรวจสอบเลขบัตร
-  if (value === "0975-33671") {
-    window.location.href = "https://verify.amulettags.online/0975-33671/";
-  } 
-  else if (value === "0821-98652") {
-    window.location.href = "https://verify.amulettags.online/0821-98652/";
-  }
-  else if (value === "0799-68289") {
-    window.location.href = "https://verify.amulettags.online/0799-68289/";
+function searchCert(){
+
+    let value=document.getElementById("searchInput").value.trim();
+
+    if(value===""){
+        alert("กรุณากรอกเลขบัตร");
+        return;
     }
-    else if (value === "A531-6507E") {
-    window.location.href = "https://verify.amulettags.online/A531-6507E/";
+
+    if(value==="0975-33671"){
+        window.location.href="https://verify.amulettags.online/0975-33671/";
     }
-    else if (value === "7221-51882") {
-    window.location.href = "https://verify.amulettags.online/7221-51882/";
+
+    else if(value==="0821-98652"){
+        window.location.href="https://verify.amulettags.online/0821-98652/";
     }
-      else if (value === "6449-2716") {
-    window.location.href = "https://verify.amulettags.online/6449-2714/";
+
+    else if(value==="0799-68289"){
+        window.location.href="https://verify.amulettags.online/0799-68289/";
     }
-    else if (value === "77392-2764") {
-    window.location.href = "https://verify.amulettags.online/6449-2714/";
+
+    else if(value==="A531-6507E"){
+        window.location.href="https://verify.amulettags.online/A531-6507E/";
     }
-  elelse
-    // ถ้าไม่ตรงกับเลขบัตรที่มีในระบบ
-    alert("ไม่พบข้อมูลเลขบัตรนี้ในระบบ");
-  }
+
+    else if(value==="7221-51882"){
+        window.location.href="https://verify.amulettags.online/7221-51882/";
+    }
+
+    else if(value==="6449-2716"){
+        window.location.href="https://verify.amulettags.online/6449-2716/";
+    }
+
+    else if(value==="77392-2764"){
+        window.location.href="https://verify.amulettags.online/77392-2764/";
+    }
+
+    else{
+        alert("ไม่พบข้อมูลเลขบัตรนี้ในระบบ");
+    }
+
 }
 
-// ฟังก์ชันสำหรับกด Enter แล้วให้ค้นหาทันที
-document.getElementById("searchInput").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    searchCert();
-  }
+document.getElementById("searchInput").addEventListener("keypress",function(e){
+
+    if(e.key==="Enter"){
+        searchCert();
+    }
+
 });
+
 </script>
 
 </body>
